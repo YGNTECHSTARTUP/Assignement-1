@@ -53,19 +53,19 @@ const Page2 = () => {
 
     fetchPosts();
   }, []); 
-  const handleChange1 = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  const handleChange1 = (e:React.SyntheticEvent<Element, Event>, index: number) => {
     setCheck(prev => {
       const length = prev[index].length;
        
         const newCheck = [...prev];
         
         for(let i=0;i<length;i++){
-          newCheck[index][i] = e.target.checked;
+          newCheck[index][i] = (e.target as HTMLInputElement).checked;
         }
        
         return newCheck;
     });
-};
+  };
   
    
   
